@@ -13,12 +13,12 @@ local Window = Rayfield:CreateWindow({
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Chain script -Neon an ios user"
+      FileName = "Chain script - Neon an ios user"
    },
 
    Discord = {
-      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "UG7bH5QUVA", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
@@ -95,6 +95,13 @@ local Toggle = Tab:CreateToggle({
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
+      local stamina = workspace.NeLaltI.Stats.Stamina
+      
+      while true do
+          stamina.Value = 100
+          wait(0.1)
+      end
+  end
    -- The function that takes place when the toggle is pressed
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
@@ -381,3 +388,4 @@ local Paragraph = Tab:CreateParagraph({Title = "Nëonicf", Content = "Created 96
 local Paragraph = Tab:CreateParagraph({Title = "Alan", Content = "Helped test out things and found out about the infinite Xsaw gas, helped made CHAIN esp highlight - Windows scripter - using JJSPloit"})
 
 local Paragraph = Tab:CreateParagraph({Title = "Alco", Content = "made source free scripts like the chain info, scrap esp, scrap autofarm, and infinite dodge"})
+
