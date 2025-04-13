@@ -1,0 +1,383 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Chainsaw scriptz",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Is it chain because chainsaw, orrrrrrrrrr",
+   LoadingSubtitle = "by Neon & Alan",
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Chain script -Neon an ios user"
+   },
+
+   Discord = {
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local Tab = Window:CreateTab("Main Tab</>", "syringe") -- Title, Image
+
+local Section = Tab:CreateSection("Windows users may get kicked due to advanced anti cheat in Chain")
+
+local Divider = Tab:CreateDivider()
+
+local Button = Tab:CreateButton({
+   Name = "Destroy UI",
+   Callback = function()
+		Rayfield:Destroy()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Print Chainsaw is funny chain",
+   Callback = function()
+		print("Chainsaw is funny chain")
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local ColorPicker = Tab:CreateColorPicker({
+    Name = "Random color picker idk",
+    Color = Color3.fromRGB(255,255,255),
+    Flag = "ColorPicker1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        -- The function that takes place every time the color picker is moved/changed
+        -- The variable (Value) is a Color3fromRGB value based on which color is selected
+    end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "CHAIN info",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BongCloudMaster/CHAIN/main/chain%20esp.lua"))()
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+Rayfield:Notify({
+   Title = "Funfact",
+   Content = "Nëonicf is an iOS user, & Alan is a Windows user",
+   Duration = 7.5,
+   Image = "mouse-pointer-2"
+})
+
+local Tab = Window:CreateTab("Character Configs", "wrench") -- Title, Image
+
+local Section = Tab:CreateSection("Most of these might be bugged or unstable")
+
+local Divider = Tab:CreateDivider()
+
+local Toggle = Tab:CreateToggle({
+   Name = "Inf Stamina - not done",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Inf Combat Stamina - not done",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "ThirdPerson",
+   Callback = function()
+		game.Players.LocalPlayer.CameraMode = Enum.CameraMode.Classic game.Players.LocalPlayer.CameraMaxZoomDistance = 128 game.Players.LocalPlayer.CameraMinZoomDistance = 0.5
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Divider = Tab:CreateDivider()
+
+local Section = Tab:CreateSection("Lightening - recommended to use both")
+
+local Button = Tab:CreateButton({
+   Name = "nofog",
+   Callback = function()
+		-- Services
+local Lighting = game:GetService("Lighting")
+
+-- FogEnd
+Lighting.FogEnd = 100000
+
+Lighting:GetPropertyChangedSignal("FogEnd"):Connect(function()
+    Lighting.FogEnd = 100000
+end)
+
+-- Atmosphere
+for _,v in ipairs(Lighting:GetDescendants()) do
+    if v:IsA("Atmosphere") then
+        v.Density = 0
+
+        v:GetPropertyChangedSignal("Density"):Connect(function()
+            v.Density = 0
+        end)
+    end
+end
+
+Lighting.DescendantAdded:Connect(function(v)
+    if v:IsA("Atmosphere") then
+        v.Density = 0
+
+        v:GetPropertyChangedSignal("Density"):Connect(function()
+            v.Density = 0
+        end)
+    end
+end)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "fullbright",
+   Callback = function()
+		if not _G.FullBrightExecuted then
+
+	_G.FullBrightEnabled = false
+
+	_G.NormalLightingSettings = {
+		Brightness = game:GetService("Lighting").Brightness,
+		ClockTime = game:GetService("Lighting").ClockTime,
+		FogEnd = game:GetService("Lighting").FogEnd,
+		GlobalShadows = game:GetService("Lighting").GlobalShadows,
+		Ambient = game:GetService("Lighting").Ambient
+	}
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function()
+		if game:GetService("Lighting").Brightness ~= 1 and game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness then
+			_G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").Brightness = 1
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function()
+		if game:GetService("Lighting").ClockTime ~= 12 and game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime then
+			_G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").ClockTime = 12
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function()
+		if game:GetService("Lighting").FogEnd ~= 786543 and game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd then
+			_G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").FogEnd = 786543
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function()
+		if game:GetService("Lighting").GlobalShadows ~= false and game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows then
+			_G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").GlobalShadows = false
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
+		if game:GetService("Lighting").Ambient ~= Color3.fromRGB(178, 178, 178) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
+			_G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+		end
+	end)
+
+	game:GetService("Lighting").Brightness = 1
+	game:GetService("Lighting").ClockTime = 12
+	game:GetService("Lighting").FogEnd = 786543
+	game:GetService("Lighting").GlobalShadows = false
+	game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+
+	local LatestValue = true
+	spawn(function()
+		repeat
+			wait()
+		until _G.FullBrightEnabled
+		while wait() do
+			if _G.FullBrightEnabled ~= LatestValue then
+				if not _G.FullBrightEnabled then
+					game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness
+					game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime
+					game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd
+					game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows
+					game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient
+				else
+					game:GetService("Lighting").Brightness = 1
+					game:GetService("Lighting").ClockTime = 12
+					game:GetService("Lighting").FogEnd = 786543
+					game:GetService("Lighting").GlobalShadows = false
+					game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+				end
+				LatestValue = not LatestValue
+			end
+		end
+	end)
+end
+
+_G.FullBrightExecuted = true
+_G.FullBrightEnabled = not _G.FullBrightEnabled
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Divider = Tab:CreateDivider()
+
+local Section = Tab:CreateSection("WARNING - this will kick u out, make sure to remove with dex before execution - may update so it automatically does it")
+
+local Toggle = Tab:CreateToggle({
+   Name = "Inf dodge",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		local __namecall
+__namecall = hookmetamethod(game, "__namecall", function(self, ...)
+    if not checkcaller() then
+
+        if getnamecallmethod() == "FireServer" then
+            if self.Name == "CTS" then
+                local args = {...}
+
+                if args[1] == "DoneDodge" then
+                    print('dodgeagain0_0')
+                    args[1] = "Dodge"
+                end
+
+                return __namecall(self, unpack(args))
+            end;
+        end;
+    end;
+
+    return __namecall(self, ...)
+end);
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Divider = Tab:CreateDivider()
+
+local Tab = Window:CreateTab("AutoFarm", "feather") -- Title, Image
+
+
+
+local Toggle = Tab:CreateToggle({
+   Name = "Automatically collect scrap",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BongCloudMaster/CHAIN/main/scrapcollector.lua"))()
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Tab = Window:CreateTab("ESP - Sixth eye fr", "telescope") -- Title, Image
+
+local Toggle = Tab:CreateToggle({
+   Name = "Chain ESP - red",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		-- Simple Highlight Script
+-- Made by alan.nguyen.12 (fixed by Neon 🗣️ 🔥{ok but actually i did all the work -Neon})
+--chain esp for chain
+
+local partToHighlight = workspace.Misc.AI.CHAIN -- Replace "MyPart" with your part's name
+
+local highlight = Instance.new("Highlight")
+highlight.Parent = partToHighlight
+highlight.FillColor = Color3.fromRGB(122, 21, 21) -- Red
+highlight.OutlineColor = Color3.fromRGB(0, 0, 0) -- Black
+highlight.FillTransparency = 0.25
+highlight.OutlineTransparency = 0
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Scrap ESP - not mine",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BongCloudMaster/CHAIN/main/scrap%20esp.lua"))()
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Tab = Window:CreateTab("Teleport - Locations", "drafting-compass") -- Title, Image
+
+local Section = Tab:CreateSection("I assume this will be patched soon")
+
+local Divider = Tab:CreateDivider()
+
+local Tab = Window:CreateTab("Animation Logger", "folder-archive") -- Title, Image
+
+local Tab = Window:CreateTab("Toturial", "file-input") -- Title, Image
+
+local Paragraph = Tab:CreateParagraph({Title = "How to get infinite XSAW gas", Content = "What you want to do is execute dex, since anti cheat detects dex, execute infinite yield and type in the dex command there, then you want to go to workspace.YourUser.Items.Xsaw, then have properties open and it should say gas, you want to reach 0 gas first then once you do, make it to 100 and you have infinite gas"})
+
+local Tab = Window:CreateTab("Updates", "bell-plus") -- Title, Image
+
+local Paragraph = Tab:CreateParagraph({Title = "1.0.0 UPDATE SCRIPT RELEASE", Content = "The first ever version of the script being realeased, free and keyless"})
+
+local Tab = Window:CreateTab("Credits", "copyright") -- Title, Image
+
+local Paragraph = Tab:CreateParagraph({Title = "Nëonicf", Content = "Created 96% of the entire gui and scripts within 1 day, created entire gui and scripts. Discord user: neonthemasked - dm me for any bugs and stuff or if you need help - iOS scripter - using Cryptic iOS"})
+
+local Paragraph = Tab:CreateParagraph({Title = "Alan", Content = "Helped test out things and found out about the infinite Xsaw gas, helped made CHAIN esp highlight - Windows scripter - using JJSPloit"})
+
+local Paragraph = Tab:CreateParagraph({Title = "Alco", Content = "made source free scripts like the chain info, scrap esp, scrap autofarm, and infinite dodge"})
