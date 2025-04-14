@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Chainsaw scriptz",
+   Name = "ZXCHainz",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Is it chain because chainsaw, orrrrrrrrrr",
    LoadingSubtitle = "by Neon & Alan",
@@ -94,14 +94,7 @@ local Toggle = Tab:CreateToggle({
    Name = "Inf Stamina - not done",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-      local stamina = workspace.NeLaltI.Stats.Stamina
-      
-      while true do
-          stamina.Value = 100
-          wait(0.1)
-      end
-  end
+   Callback = function(Value)      
    -- The function that takes place when the toggle is pressed
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
@@ -371,11 +364,85 @@ local Section = Tab:CreateSection("I assume this will be patched soon")
 
 local Divider = Tab:CreateDivider()
 
+local Button = Tab:CreateButton({
+   Name = "SafeHouse",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(162.680023, -94.2610092, 230.036407, 0.999293089, -1.40679939e-08, 0.0375940055, 1.348163e-08, 1, 1.58507891e-08, -0.0375940055, -1.53327555e-08, 0.999293089)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "WorkShop Outside",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(130.923874, -106.07193, -2.17581439, 0.507446766, -0.859753072, -0.0576408654, 0.767467797, 0.481365085, -0.42341572, 0.391779244, 0.170623437, 0.904099941)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "WorkShop Inside",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(169.560654, -103.651337, -30.0143433, 0.262320459, 1.83968858e-08, -0.964980841, 9.02348959e-11, 1, 1.90890379e-08, 0.964980841, -5.09452036e-09, 0.262320459)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Cabin inside",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-324.801575, -88.6199799, 290.675598, 0.451050401, 1.02070366e-07, -0.892498493, -2.45230627e-08, 1, 1.01971303e-07, 0.892498493, -2.41073987e-08, 0.451050401)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Shop",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-111.376678, -87.2069778, 203.522934, -0.851789057, -5.88233995e-08, 0.523884892, -1.06661249e-08, 1, 9.49409156e-08, -0.523884892, 7.5281811e-08, -0.851789057)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "PowerStation",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-208.299744, -110.604126, -120.227615, 0.994857252, -4.01115097e-09, 0.101287208, 1.21101742e-08, 1, -7.9346087e-08, -0.101287208, 8.01646323e-08, 0.994857252)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "WareHouse",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(314.623566, -113.515549, -258.481567, 0.99898839, 1.88050908e-08, -0.0449683107, -1.91088674e-08, 1, -6.32548991e-09, 0.0449683107, 7.17838455e-09, 0.99898839)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Ritural",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18.6015053, -107.779076, -229.89505, 0.924807549, -7.74951925e-09, -0.380435318, -1.76391968e-09, 1, -2.46580836e-08, 0.380435318, 2.34750388e-08, 0.924807549)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "LeaderBoard",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(45.6568947, -97.9687805, 352.514221, -0.99593854, -2.09143503e-09, -0.0900359452, 1.3530822e-09, 1, -3.81960987e-08, 0.0900359452, -3.8162792e-08, -0.99593854)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
 local Tab = Window:CreateTab("Animation Logger", "folder-archive") -- Title, Image
 
 local Tab = Window:CreateTab("Toturial", "file-input") -- Title, Image
 
-local Paragraph = Tab:CreateParagraph({Title = "How to get infinite XSAW gas", Content = "What you want to do is execute dex, since anti cheat detects dex, execute infinite yield and type in the dex command there, then you want to go to workspace.YourUser.Items.Xsaw, then have properties open and it should say gas, you want to reach 0 gas first then once you do, make it to 100 and you have infinite gas"})
+local Paragraph = Tab:CreateParagraph({Title = "How to get infinite XSAW gas", Content = "What you want to do is execute dex, since anti cheat detects dex, execute infinite yield and type in the dex command there, then you want to go to workspace.YourUser.Items.Xsaw, then have properties open and it should say gas, you want to reach 0 gas first then once you do, make it to 100 and you have infinite gas, ORRRR You can do workspace.usernameHere.Stats.Xsaw.Gas.Value = 100 Xsaw has to be at 0"})
+
+   local Paragraph = Tab:CreateParagraph({Title = "HOW to get infinite Stamina", Content = "You can open up Dex using Infinite yield, then you want to go to workspace, then your username/character, then stats, then stamina, then you cant set stamina there, the script way is that you do, workspace.UserNameHere.Stats.Stamina.Value = 100, then after the value you can make it repeat every 0.1 seconds, [i forgot how to]"})
 
 local Tab = Window:CreateTab("Updates", "bell-plus") -- Title, Image
 
