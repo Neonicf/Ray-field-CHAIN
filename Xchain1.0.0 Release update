@@ -1,9 +1,9 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Xchain",
+   Name = "XCHain",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Is it chain because chainsaw, orrrrrrrrrr",
+   LoadingTitle = "Chain when he hears about chainmail armor",
    LoadingSubtitle = "by Neon & Alan",
    Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
@@ -17,8 +17,8 @@ local Window = Rayfield:CreateWindow({
    },
 
    Discord = {
-      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "UG7bH5QUVA", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
@@ -66,16 +66,6 @@ local ColorPicker = Tab:CreateColorPicker({
     end
 })
 
-local Toggle = Tab:CreateToggle({
-   Name = "CHAIN info",
-   CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/BongCloudMaster/CHAIN/main/chain%20esp.lua"))()
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
 
 Rayfield:Notify({
    Title = "Funfact",
@@ -84,7 +74,7 @@ Rayfield:Notify({
    Image = "mouse-pointer-2"
 })
 
-local Tab = Window:CreateTab("Character Configs", "wrench") -- Title, Image
+local Tab = Window:CreateTab("Character Config/Lightening", "wrench") -- Title, Image
 
 local Section = Tab:CreateSection("Most of these might be bugged or unstable")
 
@@ -94,7 +84,7 @@ local Toggle = Tab:CreateToggle({
    Name = "Inf Stamina - not done",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)      
+   Callback = function(Value)
    -- The function that takes place when the toggle is pressed
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
@@ -325,6 +315,14 @@ local Toggle = Tab:CreateToggle({
 
 local Tab = Window:CreateTab("ESP - Sixth eye fr", "telescope") -- Title, Image
 
+local Button = Tab:CreateButton({
+   Name = "chain info esp",
+   Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BongCloudMaster/CHAIN/main/chain%20esp.lua"))()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
 local Toggle = Tab:CreateToggle({
    Name = "Chain ESP - red",
    CurrentValue = false,
@@ -347,14 +345,11 @@ highlight.OutlineTransparency = 0
    end,
 })
 
-local Toggle = Tab:CreateToggle({
+local Button = Tab:CreateButton({
    Name = "Scrap ESP - not mine",
-   CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+   Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/BongCloudMaster/CHAIN/main/scrap%20esp.lua"))()
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
+   -- The function that takes place when the button is pressed
    end,
 })
 
@@ -421,7 +416,7 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Ritural",
+   Name = "Ritual",
    Callback = function()
       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18.6015053, -107.779076, -229.89505, 0.924807549, -7.74951925e-09, -0.380435318, -1.76391968e-09, 1, -2.46580836e-08, 0.380435318, 2.34750388e-08, 0.924807549)
    -- The function that takes place when the button is pressed
@@ -436,23 +431,32 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Radio Tower",
+   Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-402.222595, -112.368164, 44.1699409, 0.0451246351, -1.07376825e-14, -0.998981357, -6.33584847e-08, 1, -2.86195445e-09, 0.998981357, 6.34230872e-08, 0.0451246351)
+   -- The function that takes place when the button is pressed
+   end,
+})
+
 local Tab = Window:CreateTab("Animation Logger", "folder-archive") -- Title, Image
 
 local Tab = Window:CreateTab("Toturial", "file-input") -- Title, Image
 
-local Paragraph = Tab:CreateParagraph({Title = "How to get infinite XSAW gas", Content = "What you want to do is execute dex, since anti cheat detects dex, execute infinite yield and type in the dex command there, then you want to go to workspace.YourUser.Items.Xsaw, then have properties open and it should say gas, you want to reach 0 gas first then once you do, make it to 100 and you have infinite gas, ORRRR You can do workspace.usernameHere.Stats.Xsaw.Gas.Value = 100 Xsaw has to be at 0"})
+local Paragraph = Tab:CreateParagraph({Title = "How to get infinite XSAW gas", Content = "What you want to do is execute dex, since anti cheat detects dex, execute infinite yield and type in the dex command there, then you want to go to workspace.YourUser.Items.Xsaw, then have properties open and it should say gas, you want to reach 0 gas first then once you do, make it to 100 and you have infinite gas"})
 
-   local Paragraph = Tab:CreateParagraph({Title = "HOW to get infinite Stamina", Content = "You can open up Dex using Infinite yield, then you want to go to workspace, then your username/character, then stats, then stamina, then you cant set stamina there, the script way is that you do, workspace.UserNameHere.Stats.Stamina.Value = 100, then after the value you can make it repeat every 0.1 seconds, [i forgot how to]"})
+ local Paragraph = Tab:CreateParagraph({Title = "v2 how to get Infinite Stamina", Content = "Your going to want to have a executor open, you want to type, while true do workspace.usernamehere.Stats.Stamina.Value = 100 wait(1) end | for line 1 put While true do | then for  line 2 do {click on tab key first} workspace.Youruser.Stats.Stamina.Value = 100 | line 3 do {press tab 2 times} wait(1) | lastly for line 4, do end and the E has to be aligned with the W in wait, sorry if this is confusing, i will put a YT toturial soon also replace the parts where i said userhere with your actual roblox username or it wont work"})
 
 local Tab = Window:CreateTab("Updates", "bell-plus") -- Title, Image
 
 local Paragraph = Tab:CreateParagraph({Title = "1.0.0 UPDATE SCRIPT RELEASE", Content = "The first ever version of the script being realeased, free and keyless"})
 
+local Paragraph = Tab:CreateParagraph({Title = "1.0.1 Mini Update", Content = "Added Stamina Toturial v2, fixed the mispelling of ritual in teleports, Changed Load in text, changed named from XChain to XCHain, added Radio Tower teleporation, fixed some toggles that arent really toggles into buttons but not all because im planning into making them into toggles | notice: if your wondering why im making toturials instead of making them buttons, is that im having a hard time getting the localcharacter name. sorry for bad explantion"})
+
 local Tab = Window:CreateTab("Credits", "copyright") -- Title, Image
 
-local Paragraph = Tab:CreateParagraph({Title = "Nëonicf", Content = "Created 96% of the entire gui and scripts within 1 day, created entire gui and scripts. Discord user: neonthemasked - dm me for any bugs and stuff or if you need help - iOS scripter - using Cryptic iOS"})
+local Paragraph = Tab:CreateParagraph({Title = "Nëonicf/Notezfc", Content = "Created 96% of the entire gui and scripts within 1 day, created entire gui and scripts. Discord user: neonthemasked - dm me for any bugs and stuff or if you need help - iOS scripter - using Cryptic iOS"})
 
 local Paragraph = Tab:CreateParagraph({Title = "Alan", Content = "Helped test out things and found out about the infinite Xsaw gas, helped made CHAIN esp highlight - Windows scripter - using JJSPloit"})
 
 local Paragraph = Tab:CreateParagraph({Title = "Alco", Content = "made source free scripts like the chain info, scrap esp, scrap autofarm, and infinite dodge"})
-
