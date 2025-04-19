@@ -1,24 +1,64 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "XCHain",
+   Name = "XCHain - 1.3.1",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Chain when he hears about chainmail armor",
-   LoadingSubtitle = "by Neon & Alan",
-   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   LoadingSubtitle = "by Neonicf/notezfc & Alan",
+   Theme = {
+    TextColor = Color3.fromRGB(143, 46, 62),
+
+    Background = Color3.fromRGB(3, 2, 2),
+    Topbar = Color3.fromRGB(0, 0, 0),
+    Shadow = Color3.fromRGB(82, 29, 29),
+
+    NotificationBackground = Color3.fromRGB(0, 0, 0),
+    NotificationActionsBackground = Color3.fromRGB(207, 204, 204),
+
+    TabBackground = Color3.fromRGB(0, 0, 0),
+    TabStroke = Color3.fromRGB(255, 255, 255),
+    TabBackgroundSelected = Color3.fromRGB(0, 0, 0),
+    TabTextColor = Color3.fromRGB(255, 230, 255),
+    SelectedTabTextColor = Color3.fromRGB(230, 230, 230),
+
+    ElementBackground = Color3.fromRGB(0, 0, 0),
+    ElementBackgroundHover = Color3.fromRGB(0, 0, 0),
+    SecondaryElementBackground = Color3.fromRGB(0, 0, 0),
+    ElementStroke = Color3.fromRGB(71, 24, 24),
+    SecondaryElementStroke = Color3.fromRGB(71, 24, 24),
+            
+    SliderBackground = Color3.fromRGB(0, 0, 0),
+    SliderProgress = Color3.fromRGB(0, 0, 0),
+    SliderStroke = Color3.fromRGB(230, 230, 230),
+
+    ToggleBackground = Color3.fromRGB(0, 0, 0),
+    ToggleEnabled = Color3.fromRGB(207, 204, 204),
+    ToggleDisabled = Color3.fromRGB(255, 255, 255),
+    ToggleEnabledStroke = Color3.fromRGB(0, 0, 0),
+    ToggleDisabledStroke = Color3.fromRGB(0, 0, 0),
+    ToggleEnabledOuterStroke = Color3.fromRGB(71, 24, 24),
+    ToggleDisabledOuterStroke = Color3.fromRGB(71, 24, 24),
+
+    DropdownSelected = Color3.fromRGB(71, 24, 24),
+    DropdownUnselected = Color3.fromRGB(0, 0, 0),
+
+    InputBackground = Color3.fromRGB(0, 0, 0),
+    InputStroke = Color3.fromRGB(65, 65, 65),
+    PlaceholderColor = Color3.fromRGB(71, 24, 24)
+}, -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    DisableRayfieldPrompts = false,
    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
 
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
+      FolderName = XCHain, -- Create a custom folder for your hub/game
       FileName = "Chain script - Neon an ios user"
    },
 
    Discord = {
-      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "UG7bH5QUVA", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
@@ -66,39 +106,122 @@ local ColorPicker = Tab:CreateColorPicker({
     end
 })
 
-
 Rayfield:Notify({
    Title = "Funfact",
-   Content = "Nëonicf is an iOS user, & Alan is a Windows user",
-   Duration = 7.5,
+   Content = "Nëonicf is an iOS user, & Alan is a Windows user | Join my Discord at dsc.gg/UG7bH5QUVA",
+   Duration = 11.5,
    Image = "mouse-pointer-2"
 })
 
-local Tab = Window:CreateTab("Character Config/Lightening", "wrench") -- Title, Image
+local Tab = Window:CreateTab("Character Config", "wrench") -- Title, Image
 
-local Section = Tab:CreateSection("Most of these might be bugged or unstable")
+local Section = Tab:CreateSection("some of these might be bugged or unstable")
 
 local Divider = Tab:CreateDivider()
 
 local Toggle = Tab:CreateToggle({
-   Name = "Inf Stamina - not done",
+   Name = "Inf Stamina",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
+		while true do
+	game.Players.LocalPlayer.Character.Stats.Stamina.Value = 100
+		wait(0.5)
+		end
    -- The function that takes place when the toggle is pressed
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
 local Toggle = Tab:CreateToggle({
-   Name = "Inf Combat Stamina - not done",
+   Name = "Inf Combat Stamina",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
+		while true do
+	game.Players.LocalPlayer.Character.Stats.CombatStamina.Value = 100
+		wait(0.5)
+		end
    -- The function that takes place when the toggle is pressed
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
+
+local Toggle = Tab:CreateToggle({
+   Name = "Auto Win XSaw Clash",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		while true do
+    game.Players.LocalPlayer.Character.Stats.ClashStrength.Value = 100
+        wait(0.01)
+        end
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Divider = Tab:CreateDivider()
+
+
+local Button = Tab:CreateButton({
+   Name = "inf XSaw Gas",
+   Callback = function()
+		while true do
+	game.Players.LocalPlayer.Character.Items.XSaw:SetAttribute("Gas", 100)
+		wait(0.01)
+		end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "inf AK-47 ammo",
+   Callback = function()
+		while true do
+	game.Players.LocalPlayer.Character.Items.AK47:SetAttribute("Ammo", 9999)
+		wait(0.01)
+		end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "inf Deagle ammo",
+   Callback = function()
+		while true do
+	game.Players.LocalPlayer.Character.Items.Deagle:SetAttribute("Ammo", 9999)
+		wait(0.1)
+		end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "inf double-barrel ammo",
+   Callback = function()
+		while true do
+	game.Players.LocalPlayer.Character.Items.DoubleBarrel:SetAttribute("Ammo", 9999)
+		wait(0.1)
+		end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "inf M1911 ammo",
+   Callback = function()
+		while true do
+	game.Players.LocalPlayer.Character.Items.M1911:SetAttribute("Ammo", 9999)
+		wait(0.1)
+		end
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Paragraph = Tab:CreateParagraph({Title = "INFO", Content = "1.3.1 note:You may have to reach 0 ammo/gas first for it to work, if you hear no sound from gun it means it worked, i tested on chain and all damage from xsaw/guns do valid damage. only thing is that xsaw doesnt do the save animation | I honestly feel so proud of my self after making this lol -Nëonicf"})
+
+local Divider = Tab:CreateDivider()
 
 local Button = Tab:CreateButton({
    Name = "ThirdPerson",
@@ -108,9 +231,79 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Remove Mask on head - third person",
+   Callback = function()
+		game.Players.LocalPlayer.Character.Sack.SurfaceAppearance.Parent:Destroy()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
 local Divider = Tab:CreateDivider()
 
+local Toggle = Tab:CreateToggle({
+   Name = "CHAIN Hitbox expander beta",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		while true do
+	workspace.Misc.AI.CHAIN.Torso.Size = Vector3.new(6, 6, 6) -- Replace with your desired X, Y, and Z dimensions
+	workspace.Misc.AI.CHAIN.Torso.CanCollide = false
+	workspace.Misc.AI.CHAIN.Torso.Transparency = 0.7
+	workspace.Misc.AI.CHAIN.Torso.BrickColor = BrickColor.new("Neon Red")
+	workspace.Misc.AI.CHAIN.Torso.Material = Enum.Material.Neon
+	wait(3)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   		end
+	end,
+})
+
+local Divider = Tab:CreateDivider()
+
+local Section = Tab:CreateSection("WARNING - this will kick u out, make sure to remove with dex before execution - may update so it automatically does it")
+
+local Toggle = Tab:CreateToggle({
+   Name = "Inf dodge",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		Rayfield:Notify({
+   Title = "WARNING!!!",
+   Content = "If you use again during dodge cooldown it will kick you!! - try removing anitcheat with dex",
+   Duration = 9.5,
+   Image = "rewind",
+})
+		local __namecall
+__namecall = hookmetamethod(game, "__namecall", function(self, ...)
+    if not checkcaller() then
+
+        if getnamecallmethod() == "FireServer" then
+            if self.Name == "CTS" then
+                local args = {...}
+
+                if args[1] == "DoneDodge" then
+                    print('dodgeagain0_0')
+                    args[1] = "Dodge"
+                end
+
+                return __namecall(self, unpack(args))
+            end;
+        end;
+    end;
+
+    return __namecall(self, ...)
+end);
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
+
+local Tab = Window:CreateTab("Lightening", "zap") -- Title, Image
+
 local Section = Tab:CreateSection("Lightening - recommended to use both")
+
+local Divider = Tab:CreateDivider()
 
 local Button = Tab:CreateButton({
    Name = "nofog",
@@ -264,35 +457,11 @@ _G.FullBrightEnabled = not _G.FullBrightEnabled
 
 local Divider = Tab:CreateDivider()
 
-local Section = Tab:CreateSection("WARNING - this will kick u out, make sure to remove with dex before execution - may update so it automatically does it")
-
-local Toggle = Tab:CreateToggle({
-   Name = "Inf dodge",
-   CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-		local __namecall
-__namecall = hookmetamethod(game, "__namecall", function(self, ...)
-    if not checkcaller() then
-
-        if getnamecallmethod() == "FireServer" then
-            if self.Name == "CTS" then
-                local args = {...}
-
-                if args[1] == "DoneDodge" then
-                    print('dodgeagain0_0')
-                    args[1] = "Dodge"
-                end
-
-                return __namecall(self, unpack(args))
-            end;
-        end;
-    end;
-
-    return __namecall(self, ...)
-end);
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
+local Button = Tab:CreateButton({
+   Name = "Shaders - PShade",
+   Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua'))()
+   -- The function that takes place when the button is pressed
    end,
 })
 
@@ -312,6 +481,8 @@ local Toggle = Tab:CreateToggle({
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
+
+local Paragraph = Tab:CreateParagraph({Title = "Sneak Peak", Content = "I will add artifact auto farm soon"})
 
 local Tab = Window:CreateTab("ESP - Sixth eye fr", "telescope") -- Title, Image
 
@@ -355,7 +526,7 @@ local Button = Tab:CreateButton({
 
 local Tab = Window:CreateTab("Teleport - Locations", "drafting-compass") -- Title, Image
 
-local Section = Tab:CreateSection("I assume this will be patched soon")
+local Section = Tab:CreateSection("I assume this will be patched soon - due to map update soon")
 
 local Divider = Tab:CreateDivider()
 
@@ -441,22 +612,104 @@ local Button = Tab:CreateButton({
 
 local Tab = Window:CreateTab("Animation Logger", "folder-archive") -- Title, Image
 
+
+
 local Tab = Window:CreateTab("Toturial", "file-input") -- Title, Image
 
-local Paragraph = Tab:CreateParagraph({Title = "How to get infinite XSAW gas", Content = "What you want to do is execute dex, since anti cheat detects dex, execute infinite yield and type in the dex command there, then you want to go to workspace.YourUser.Items.Xsaw, then have properties open and it should say gas, you want to reach 0 gas first then once you do, make it to 100 and you have infinite gas"})
+local Paragraph = Tab:CreateParagraph({Title = "How to get infinite XSAW gas - you dont need too anymore unless the button i implented didnt work", Content = "What you want to do is execute dex, since anti cheat detects dex, execute infinite yield and type in the dex command there, then you want to go to workspace.YourUser.Items.Xsaw, then have properties open and it should say gas, you want to reach 0 gas first then once you do, make it to 100 and you have infinite gas"})
 
- local Paragraph = Tab:CreateParagraph({Title = "v2 how to get Infinite Stamina", Content = "Your going to want to have a executor open, you want to type, while true do workspace.usernamehere.Stats.Stamina.Value = 100 wait(1) end | for line 1 put While true do | then for  line 2 do {click on tab key first} workspace.Youruser.Stats.Stamina.Value = 100 | line 3 do {press tab 2 times} wait(1) | lastly for line 4, do end and the E has to be aligned with the W in wait, sorry if this is confusing, i will put a YT toturial soon also replace the parts where i said userhere with your actual roblox username or it wont work"})
+ local Paragraph = Tab:CreateParagraph({Title = "v2 how to get Infinite Stamina - you dont need to anymore due to the button i made", Content = "Your going to want to have a executor open, you want to type, while true do workspace.usernamehere.Stats.Stamina.Value = 100 wait(1) end | for line 1 put While true do | then for  line 2 do {click on tab key first} workspace.Youruser.Stats.Stamina.Value = 100 | line 3 do {press tab 2 times} wait(1) | lastly for line 4, do end and the E has to be aligned with the W in wait, sorry if this is confusing, i will put a YT toturial soon also replace the parts where i said userhere with your actual roblox username or it wont work"})
 
 local Tab = Window:CreateTab("Updates", "bell-plus") -- Title, Image
 
 local Paragraph = Tab:CreateParagraph({Title = "1.0.0 UPDATE SCRIPT RELEASE", Content = "The first ever version of the script being realeased, free and keyless"})
 
-local Paragraph = Tab:CreateParagraph({Title = "1.0.1 Mini Update", Content = "Added Stamina Toturial v2, fixed the mispelling of ritual in teleports, Changed Load in text, changed named from XChain to XCHain, added Radio Tower teleporation, fixed some toggles that arent really toggles into buttons but not all because im planning into making them into toggles | notice: if your wondering why im making toturials instead of making them buttons, is that im having a hard time getting the localcharacter name. sorry for bad explantion"})
+local Paragraph = Tab:CreateParagraph({Title = "1.0.1 Mini Update", Content = "Added Stamina Toturial v2, fixed the mispelling of ritual in teleports, Changed Load in text, changed named from XChain to XCHain, added Radio Tower teleporation, fixed some toggles that arent really toggles into buttons but not all because im planning into making them into toggles, moved CHAIN INFO to ESP instead of Main| notice: if your wondering why im making toturials instead of making them buttons, is that im having a hard time getting the localcharacter name. sorry for bad explantion"})
+
+local Paragraph = Tab:CreateParagraph({Title = "1.3.1 Minor-Major Update", Content = "Added inf Stamina and Combat Stamina buttons/toggles, Added a custom theme to stand out, added a seperate tab for lightening, removed bag on head when you turn on third person, CHAIN Torso hitbox expander beta, infinite ammo buttons for all guns in game but deagle might not work, added XSaw infinite gas but might not work because u have to get 0 gas maybe, changed most to some in the character config note, Added themes tab if you didnt like this one, sneakpeak: animation logger is 99.9% next update unless something goes wrong and i will probably make it so toggles actually work"})
 
 local Tab = Window:CreateTab("Credits", "copyright") -- Title, Image
 
-local Paragraph = Tab:CreateParagraph({Title = "Nëonicf/Notezfc", Content = "Created 96% of the entire gui and scripts within 1 day, created entire gui and scripts. Discord user: neonthemasked - dm me for any bugs and stuff or if you need help - iOS scripter - using Cryptic iOS"})
+local Paragraph = Tab:CreateParagraph({Title = "Nëonicf/Notezfc", Content = "Created the entire gui and scripts and managing them with updates, Made all scripts except some made by Alco, Discord user: neonthemasked - dm me for any bugs and stuff or if you need help - iOS scripter - using Cryptic iOS"})
 
-local Paragraph = Tab:CreateParagraph({Title = "Alan", Content = "Helped test out things and found out about the infinite Xsaw gas, helped made CHAIN esp highlight - Windows scripter - using JJSPloit"})
+local Paragraph = Tab:CreateParagraph({Title = "Alan", Content = "Helped test out things and found out about the infinite Xsaw gas + ammo (neon scripted them), helped made CHAIN esp highlight - Windows scripter - using JJSPloit"})
 
 local Paragraph = Tab:CreateParagraph({Title = "Alco", Content = "made source free scripts like the chain info, scrap esp, scrap autofarm, and infinite dodge"})
+
+local Tab = Window:CreateTab("Themes", "cloud-fog")
+
+local Section = Tab:CreateSection("Themes if you dont like the one I made")
+
+local Divider = Tab:CreateDivider()
+
+local Button = Tab:CreateButton({
+   Name = "Default",
+   Callback = function()
+		Window.ModifyTheme('Default')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Amber Glow",
+   Callback = function()
+		Window.ModifyTheme('AmberGlow')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Amethyst",
+   Callback = function()
+		Window.ModifyTheme('Amethyst')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Bloom",
+   Callback = function()
+		Window.ModifyTheme('Bloom')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Dark Blue",
+   Callback = function()
+		Window.ModifyTheme('DarkBlue')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Green",
+   Callback = function()
+		Window.ModifyTheme('Green')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Light",
+   Callback = function()
+		Window.ModifyTheme('Light')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Ocean",
+   Callback = function()
+		Window.ModifyTheme('Ocean')
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Serenity",
+   Callback = function()
+		Window.ModifyTheme('Serenity')
+   -- The function that takes place when the button is pressed
+   end,
+})
