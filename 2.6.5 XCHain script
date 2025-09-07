@@ -5,7 +5,7 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 -- hi if ur seeing the source code also alan used to like skibidi toilet tower defense alot (dont tell him i said this)
 
 local Window = Rayfield:CreateWindow({
-   Name = "XCHain - 2.5.5",
+   Name = "XCHain - 2.6.5",
    Icon = 16310770488, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Chain mods when Neonicf is lazy on script",
    LoadingSubtitle = "by Neonicf/Notezfc & Alan",
